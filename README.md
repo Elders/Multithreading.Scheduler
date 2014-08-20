@@ -1,3 +1,3 @@
-Multithreading.Scheduler
+Multithreading.Scheduler 
 ========================
-[![Build status](https://ci.appveyor.com/api/projects/status/rvg4nci1t09dfcn6/branch/master)](https://ci.appveyor.com/project/mynkow/multithreading-scheduler/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/g83gf2h2mqdna2o8)](https://ci.appveyor.com/project/mynkow/multithreading-scheduler-929)
