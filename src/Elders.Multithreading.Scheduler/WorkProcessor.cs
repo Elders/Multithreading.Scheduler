@@ -45,7 +45,7 @@ namespace Elders.Multithreading.Scheduler
                             work = workSource.GetAvailableWork();
                             if (work != null)
                             {
-                                log.InfoFormat("Executing work [{0}]", work);
+                                log.DebugFormat("Executing work [{0}]", work);
                                 work.Start();
                                 log.InfoFormat("Work finished successfully. [{0}]", work);
                                 workSource.ReturnFinishedWork(work);
@@ -57,7 +57,7 @@ namespace Elders.Multithreading.Scheduler
                             log.Error("Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Start()' method.", ex);
                         }
                     }
-                    log.Debug("Crowler was stopped.");
+                    log.Info("Crowler was stopped.");
                 }));
                 thread.Name = name;
                 thread.Start();
@@ -74,11 +74,19 @@ namespace Elders.Multithreading.Scheduler
         /// </summary>
         public void Stop()
         {
-            log.DebugFormat("Stopping crawler '{0}'...", name);
-            thread = null;
-            shouldStop = true;
-            if (work != null)
-                work.Stop();
+            try
+            {
+                log.DebugFormat("Stopping crawler '{0}'...", name);
+                thread = null;
+                shouldStop = true;
+                if (work != null)
+                    work.Stop();
+            }
+            catch (Exception ex)
+            {
+                log.FatalFormat("Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Stop()' method.", ex);
+                throw;
+            }
         }
 
     }
