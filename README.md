@@ -7,7 +7,7 @@ Usage
 
 The idea is to create a dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.
 
-
+```C#
 class Program
 {
     static void Main(string[] args)
@@ -61,3 +61,4 @@ public class AtomicInteger
         Interlocked.Increment(ref currentValue);
     }
 }
+```
