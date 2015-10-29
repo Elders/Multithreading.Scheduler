@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Elders.Multithreading.Scheduler.Logging;
 
 namespace Elders.Multithreading.Scheduler
 {
@@ -10,7 +11,7 @@ namespace Elders.Multithreading.Scheduler
     {
         private const int OneHour = 3600000;
 
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(WorkProcessor));
+        private static readonly ILog log = LogProvider.GetLogger(typeof(WorkSourceScheduler));
 
         private volatile bool shouldWork = true;
 
@@ -40,7 +41,7 @@ namespace Elders.Multithreading.Scheduler
         public void ScheduleWork(IWork work)
         {
             unmanagedPendingWork.Enqueue(work);
-            if (log.IsDebugEnabled)
+            if (log.IsDebugEnabled())
                 log.DebugFormat("WorkManager received a new  work for scheduling. [{0}]", work);
             WakeUpTheManager();
         }
@@ -96,7 +97,7 @@ namespace Elders.Multithreading.Scheduler
                         if (workForSchedule.Remove(orderedPendingWork[i]))
                         {
                             workReadyForProcess(orderedPendingWork[i]);
-                            if (log.IsDebugEnabled)
+                            if (log.IsDebugEnabled())
                                 log.DebugFormat("WorkManager has prepared a work for processing by the crawlers. [{0}]", orderedPendingWork[i]);
                         }
                         else
@@ -127,7 +128,7 @@ namespace Elders.Multithreading.Scheduler
             }
             catch (Exception ex)
             {
-                log.Fatal("Catastrophic error in WorkManager. If you get this error you are in big trouble. Contact Simeon.Dimov@mentormate.com or nikolay.mankov@mentormate.com ASAP. Be prepared for PAFA.", ex);
+                log.FatalException("Catastrophic error in WorkManager. PAFA!", ex);
                 throw;
             }
         }

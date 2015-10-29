@@ -3,14 +3,15 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitleAttribute("Elders.Multithreading.Scheduler")]
-[assembly: AssemblyDescriptionAttribute("Elders.Multithreading.Scheduler")]
-[assembly: GuidAttribute("b422fc04-22de-40ec-978f-bf89fc017411")]
+[assembly: AssemblyDescriptionAttribute("The idea is to create a dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.")]
+[assembly: ComVisibleAttribute(false)]
 [assembly: AssemblyProductAttribute("Elders.Multithreading.Scheduler")]
-[assembly: AssemblyVersionAttribute("1.0.1")]
-[assembly: AssemblyInformationalVersionAttribute("1.0.1")]
-[assembly: AssemblyFileVersionAttribute("1.0.1")]
+[assembly: AssemblyCopyrightAttribute("Copyright ©  2015")]
+[assembly: AssemblyVersionAttribute("1.1.0.0")]
+[assembly: AssemblyFileVersionAttribute("1.1.0.0")]
+[assembly: AssemblyInformationalVersionAttribute("1.1.0-beta.1+0.Branch.release/1.1.0.Sha.c42b1e80ff319dc8fecfcd9396662a96fcafbfaf")]
 namespace System {
     internal static class AssemblyVersionInformation {
-        internal const string Version = "1.0.1";
+        internal const string Version = "1.1.0.0";
     }
 }
