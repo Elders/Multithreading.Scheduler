@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using Elders.Multithreading.Scheduler.Logging;
 
 namespace Elders.Multithreading.Scheduler
 {
@@ -8,7 +9,7 @@ namespace Elders.Multithreading.Scheduler
     /// </summary>
     internal class WorkProcessor
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(WorkProcessor));
+        private static readonly ILog log = LogProvider.GetLogger(typeof(WorkProcessor));
 
         private string name;
 
@@ -54,7 +55,7 @@ namespace Elders.Multithreading.Scheduler
                         }
                         catch (Exception ex)
                         {
-                            log.Error("Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Start()' method.", ex);
+                            log.ErrorException("Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Start()' method.", ex);
                         }
                     }
                     log.Info("Crowler was stopped.");
