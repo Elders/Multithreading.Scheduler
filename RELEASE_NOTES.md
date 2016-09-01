@@ -1,3 +1,6 @@
+#### 1.1.1 - 01.09.2016
+* Fixes bug when stopping a work
+
 #### 1.1.0 - 29.10.2015
 * Replace log4net dependency with LibLog
 

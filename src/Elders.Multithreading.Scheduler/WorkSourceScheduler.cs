@@ -109,7 +109,7 @@ namespace Elders.Multithreading.Scheduler
                     }
                     else
                     {
-                        //  The WorkManager goes to sleep if there is NO work for scheduling at the moment. The sleep interval is the timespan between current time and the time when next work 
+                        //  The WorkManager goes to sleep if there is NO work for scheduling at the moment. The sleep interval is the timespan between current time and the time when next work
                         //  should be scheduled.
                         var waitTime = (orderedPendingWork[i].ScheduledStart.Subtract(DateTime.UtcNow));
                         if (waitTime.TotalMilliseconds > 0)
@@ -146,8 +146,8 @@ namespace Elders.Multithreading.Scheduler
         {
             if (sleepTime > 0)
             {
-                workManagerWaitHandle.Reset();
-                workManagerWaitHandle.WaitOne(sleepTime);
+                workManagerWaitHandle?.Reset();
+                workManagerWaitHandle?.WaitOne(sleepTime);
             }
         }
 
