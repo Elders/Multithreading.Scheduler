@@ -11,6 +11,5 @@
     <licenseUrl>https://github.com/Elders/Multithreading.Scheduler/blob/master/LICENSE</licenseUrl>
     <releaseNotes>@releaseNotes@</releaseNotes>
     <tags>multithreading, schedule, c#</tags>
-    @dependencies@
   </metadata>
 </package>

@@ -41,8 +41,7 @@ namespace Elders.Multithreading.Scheduler
         public void ScheduleWork(IWork work)
         {
             unmanagedPendingWork.Enqueue(work);
-            if (log.IsDebugEnabled())
-                log.DebugFormat("WorkManager received a new  work for scheduling. [{0}]", work);
+            log.Debug(() => $"WorkManager received a new work for scheduling. [{work}]");
             WakeUpTheManager();
         }
 

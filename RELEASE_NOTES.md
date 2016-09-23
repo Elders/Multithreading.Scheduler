@@ -1,3 +1,6 @@
+#### 1.1.2 - 22.09.2016
+* Properly set assembly version
+
 #### 1.1.1 - 01.09.2016
 * Fixes bug when stopping a work
 
