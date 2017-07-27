@@ -1,14 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26724.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elders.Multithreading.Scheduler", "Elders.Multithreading.Scheduler\Elders.Multithreading.Scheduler.csproj", "{092ABAB8-B06E-4CE6-BACB-AB166EB1498A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elders.Multithreading.Scheduler", "Elders.Multithreading.Scheduler\Elders.Multithreading.Scheduler.csproj", "{092ABAB8-B06E-4CE6-BACB-AB166EB1498A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{9F94794E-DE5E-4228-8C92-CC35FD11389F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nyx", ".nyx", "{37B2885A-6001-4F39-A34D-91922678850A}"
 	ProjectSection(SolutionItems) = preProject
-		Elders.Multithreading.Scheduler\Multithreading.Scheduler.nuspec = Elders.Multithreading.Scheduler\Multithreading.Scheduler.nuspec
-		..\RELEASE_NOTES.md = ..\RELEASE_NOTES.md
+		..\build.cmd = ..\build.cmd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".doc", ".doc", "{D4510ABB-095F-45E2-AFE0-B17F79A8BDF8}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Global
@@ -24,5 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A447795-4E96-42F1-8889-F98B899D05DC}
 	EndGlobalSection
 EndGlobal

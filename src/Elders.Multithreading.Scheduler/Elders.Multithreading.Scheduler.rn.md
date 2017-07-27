@@ -1,3 +1,6 @@
+#### 2.0.0-beta0001 - 27.07.2017
+* Transition to dotnetstandard20
+
 #### 1.1.2 - 22.09.2016
 * Properly set assembly version
 
