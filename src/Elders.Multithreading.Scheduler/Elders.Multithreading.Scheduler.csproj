@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputPath>Debug\</OutputPath>
   </PropertyGroup>
     <PropertyGroup>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <PackageProjectUrl>https://github.com/Elders/Multithreading.Scheduler</PackageProjectUrl>
-        <Authors>Elders</Authors>
+    <OutputPath>Release\</OutputPath>
         <PackageId>Multithreading.Scheduler</PackageId>
         <PackageTags>multithreading, schedule, c#</PackageTags>
         <Description>Create dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.</Description>
