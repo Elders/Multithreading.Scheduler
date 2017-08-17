@@ -1,3 +1,6 @@
+#### 2.0.0-beta0003 - 17.08.2017
+* This release uses the official netstandard 2.0
+
 #### 2.0.0-beta0002 - 17.08.2017
 * This release uses the official netstandard 2.0
 
