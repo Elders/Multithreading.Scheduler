@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26724.1
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elders.Multithreading.Scheduler", "Elders.Multithreading.Scheduler\Elders.Multithreading.Scheduler.csproj", "{092ABAB8-B06E-4CE6-BACB-AB166EB1498A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nyx", ".nyx", "{37B2885A-6001-4F39-A34D-91922678850A}"
-	ProjectSection(SolutionItems) = preProject
-		..\build.cmd = ..\build.cmd
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".doc", ".doc", "{D4510ABB-095F-45E2-AFE0-B17F79A8BDF8}"
 	ProjectSection(SolutionItems) = preProject
