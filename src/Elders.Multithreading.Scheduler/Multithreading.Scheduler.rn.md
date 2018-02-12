@@ -1,11 +1,5 @@
-#### 2.0.0-beta0003 - 17.08.2017
-* This release uses the official netstandard 2.0
-
-#### 2.0.0-beta0002 - 17.08.2017
-* This release uses the official netstandard 2.0
-
-#### 2.0.0-beta0001 - 27.07.2017
-* Transition to dotnetstandard20
+#### 2.0.0 - 12.02.2018
+* Adds dotnetstandard20 support
 
 #### 1.1.2 - 22.09.2016
 * Properly set assembly version
