@@ -1,3 +1,6 @@
+#### 2.0.0 - 12.02.2018
+* Adds dotnetstandard20 support
+
 #### 1.1.2 - 22.09.2016
 * Properly set assembly version
 

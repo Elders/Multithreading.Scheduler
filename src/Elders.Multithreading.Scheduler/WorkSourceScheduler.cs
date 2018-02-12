@@ -9,7 +9,7 @@ namespace Elders.Multithreading.Scheduler
 {
     internal class WorkSourceScheduler
     {
-        private const int OneHour = 3600000;
+        private const int OneSecond = 1000;
 
         private static readonly ILog log = LogProvider.GetLogger(typeof(WorkSourceScheduler));
 
@@ -83,7 +83,7 @@ namespace Elders.Multithreading.Scheduler
 
                 if (IsThereAnyWorkForRescheduling())
                 {
-                    sleepTime = OneHour;
+                    sleepTime = OneSecond;
                     return;
                 }
 
@@ -115,7 +115,7 @@ namespace Elders.Multithreading.Scheduler
                         {
                             sleepTime = int.MaxValue > (long)waitTime.TotalMilliseconds
                                 ? Convert.ToInt32(waitTime.TotalMilliseconds)
-                                : OneHour;
+                                : OneSecond;
                         }
                         else
                         {

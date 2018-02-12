@@ -2,10 +2,12 @@ Multithreading.Scheduler
 ========================
 [![Build status](https://ci.appveyor.com/api/projects/status/g83gf2h2mqdna2o8)](https://ci.appveyor.com/project/mynkow/multithreading-scheduler-929)
 
-Usage 
-========================
 
-The idea is to create a dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.
+The library gives you a control over the lifecycle of threds. You can create a dedicated threads for a particular work. This means that the library is suitable for applications which need to do a background processing. It is a tradeoff. You gain performance boost because the context switching is removed, like the.NET thread pool does, but this allocates resources which could not be reused.
+
+Usage 
+=====
+
 
 ```C#
 class Program

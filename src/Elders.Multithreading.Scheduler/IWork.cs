@@ -8,6 +8,7 @@ namespace Elders.Multithreading.Scheduler
     public interface IWork
     {
         DateTime ScheduledStart { get; }
+        string Name { get; }
         void Start();
         void Stop();
     }
