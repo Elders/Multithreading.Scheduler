@@ -1,3 +1,6 @@
+#### 2.0.1 - 19.02.2018
+* Adds .NET 4.5 support
+
 #### 2.0.0 - 12.02.2018
 * Adds dotnetstandard20 support
 
