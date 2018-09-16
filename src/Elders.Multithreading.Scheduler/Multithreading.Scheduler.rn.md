@@ -1,3 +1,7 @@
+#### 3.0.0-beta0001 - 16.09.2018
+* Targeted .net frameworks are only netstandard2.0 and net472
+* Updates packages
+
 #### 2.0.1 - 19.02.2018
 * Adds .NET 4.5 support
 
