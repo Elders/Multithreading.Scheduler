@@ -1,3 +1,7 @@
+#### 3.0.0-beta0002 - 16.09.2018
+* Targeted .net frameworks is only netstandard2.0
+* Updates packages
+
 #### 3.0.0-beta0001 - 16.09.2018
 * Targeted .net frameworks are only netstandard2.0 and net472
 * Updates packages
