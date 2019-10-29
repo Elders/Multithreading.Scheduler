@@ -21,7 +21,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <RootNamespace>Elders.Multithreading.Scheduler</RootNamespace>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <AssemblyVersion>6.0.0</AssemblyVersion>
+    <AssemblyVersion>3.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
