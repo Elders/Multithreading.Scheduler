@@ -1,3 +1,6 @@
+#### 3.0.0-beta0004 - 29.10.2019
+* Fixes assembly version
+
 #### 3.0.0-beta0003 - 29.10.2019
 * Targets netcoreapp3.0
 
