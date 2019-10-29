@@ -1,3 +1,6 @@
+#### 3.0.0-beta0003 - 29.10.2019
+* Targets netcoreapp3.0
+
 #### 3.0.0-beta0002 - 16.09.2018
 * Targeted .net frameworks is only netstandard2.0
 * Updates packages
