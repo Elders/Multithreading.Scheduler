@@ -1,3 +1,6 @@
+#### 3.0.0-beta0005 - 26.03.2020
+* Bump dotnet core to 3.1
+
 #### 3.0.0-beta0004 - 29.10.2019
 * Fixes assembly version
 
