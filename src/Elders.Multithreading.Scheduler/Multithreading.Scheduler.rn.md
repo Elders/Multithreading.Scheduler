@@ -1,3 +1,6 @@
+#### 3.0.0-beta0006 - 30.03.2020
+* Small log level change
+
 #### 3.0.0-beta0005 - 26.03.2020
 * Bump dotnet core to 3.1
 
