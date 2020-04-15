@@ -48,7 +48,7 @@ namespace Elders.Multithreading.Scheduler
                             {
                                 log.DebugFormat("Executing work [{0}]", work);
                                 work.Start();
-                                log.InfoFormat("Work finished successfully. [{0}]", work);
+                                log.DebugFormat("Work finished successfully. [{0}]", work);
                                 workSource.ReturnFinishedWork(work);
                                 log.DebugFormat("Work returned to the source. [{0}]", work);
                             }

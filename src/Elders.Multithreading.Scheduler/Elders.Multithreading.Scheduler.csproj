@@ -1,39 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
-    </PropertyGroup>
-    <PropertyGroup>
-        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <PackageProjectUrl>https://github.com/Elders/Multithreading.Scheduler</PackageProjectUrl>
-        <OutputPath>Release\</OutputPath>
-        <PackageId>Multithreading.Scheduler</PackageId>
-        <PackageTags>multithreading, schedule, c#</PackageTags>
-        <Description>Create dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.</Description>
-        <RepositoryUrl>https://github.com/Elders/Multithreading.Scheduler</RepositoryUrl>
-        <PackageLicenseUrl>https://github.com/Elders/Multithreading.Scheduler/blob/master/LICENSE</PackageLicenseUrl>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
 
-    <!--netstandard2.0-->
-    <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-        <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0;LIBLOG_PORTABLE</DefineConstants>
-    </PropertyGroup>
-    <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-        <PackageReference Include="LibLog" Version="4.2.6" />
-        <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
-    </ItemGroup>
+  <!--Nuget-->
+  <PropertyGroup>
+    <PackageId>Multithreading.Scheduler</PackageId>
+    <Product>Multithreading.Scheduler</Product>
+    <Title>Multithreading.Scheduler</Title>
+    <Authors>Elders OSS</Authors>
+    <Copyright>Copyright © Elders OSS 2013-2020</Copyright>
+    <Description>Create dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.</Description>
+    <PackageTags>multithreading, schedule, c#</PackageTags>
+    <PackageLicenseUrl>https://github.com/Elders/Multithreading.Scheduler/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Elders/Multithreading.Scheduler</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Elders/Multithreading.Scheduler.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://raw.githubusercontent.com/Elders/logo/master/multithreading-scheduler/black.png</PackageIconUrl>
+    <AssemblyName>Elders.Multithreading.Scheduler</AssemblyName>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RootNamespace>Elders.Multithreading.Scheduler</RootNamespace>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AssemblyVersion>3.0.0</AssemblyVersion>
+  </PropertyGroup>
 
-    <!--net45-->
-    <PropertyGroup Condition="'$(TargetFramework)'=='net45'">
-        <DefineConstants>TRACE;DEBUG;LIBLOG_PORTABLE</DefineConstants>
-    </PropertyGroup>
-    <ItemGroup Condition="'$(TargetFramework)'=='net45'">
-        <Reference Include="mscorlib" />
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="Microsoft.CSharp" />
-        <PackageReference Include="LibLog" Version="4.2.6" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Properties\" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LibLog" Version="5.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>

@@ -1,3 +1,6 @@
+#### 3.0.0 - 15.04.2020
+* Bump dotnet core to 3.1
+
 #### 2.0.1 - 19.02.2018
 * Adds .NET 4.5 support
 
