@@ -1,22 +1,5 @@
-#### 3.0.0-beta0006 - 30.03.2020
-* Small log level change
-
-#### 3.0.0-beta0005 - 26.03.2020
+#### 3.0.0 - 15.04.2020
 * Bump dotnet core to 3.1
-
-#### 3.0.0-beta0004 - 29.10.2019
-* Fixes assembly version
-
-#### 3.0.0-beta0003 - 29.10.2019
-* Targets netcoreapp3.0
-
-#### 3.0.0-beta0002 - 16.09.2018
-* Targeted .net frameworks is only netstandard2.0
-* Updates packages
-
-#### 3.0.0-beta0001 - 16.09.2018
-* Targeted .net frameworks are only netstandard2.0 and net472
-* Updates packages
 
 #### 2.0.1 - 19.02.2018
 * Adds .NET 4.5 support
