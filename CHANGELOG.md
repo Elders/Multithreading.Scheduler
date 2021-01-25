@@ -1,3 +1,5 @@
+# [4.0.0-next.11](https://github.com/Elders/Multithreading.Scheduler/compare/v4.0.0-next.10...v4.0.0-next.11) (2021-01-25)
+
 ## [3.0.1-next.1](https://github.com/Elders/Multithreading.Scheduler/compare/v3.0.0...v3.0.1-next.1) (2021-01-25)
 
 
