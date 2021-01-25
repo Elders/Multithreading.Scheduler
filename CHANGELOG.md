@@ -1,3 +1,10 @@
+## [3.0.1-next.1](https://github.com/Elders/Multithreading.Scheduler/compare/v3.0.0...v3.0.1-next.1) (2021-01-25)
+
+
+### Bug Fixes
+
+* Installs semanti release packages ([e58fed9](https://github.com/Elders/Multithreading.Scheduler/commit/e58fed99cc0efe4a9949420dffa6f3a86baa9793))
+
 # [4.0.0-next.10](https://github.com/Elders/Multithreading.Scheduler/compare/v4.0.0-next.9...v4.0.0-next.10) (2021-01-25)
 
 
