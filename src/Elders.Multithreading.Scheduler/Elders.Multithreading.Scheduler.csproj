@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <!--Nuget-->
@@ -9,7 +9,7 @@
     <Product>Multithreading.Scheduler</Product>
     <Title>Multithreading.Scheduler</Title>
     <Authors>Elders OSS</Authors>
-    <Copyright>Copyright © Elders OSS 2013-2020</Copyright>
+    <Copyright>Copyright © Elders OSS 2013-2021</Copyright>
     <Description>Create dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.</Description>
     <PackageTags>multithreading, schedule, c#</PackageTags>
     <PackageLicenseUrl>https://github.com/Elders/Multithreading.Scheduler/blob/master/LICENSE</PackageLicenseUrl>
@@ -21,7 +21,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <RootNamespace>Elders.Multithreading.Scheduler</RootNamespace>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <AssemblyVersion>3.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
