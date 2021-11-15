@@ -1,94 +1,116 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
-using Elders.Multithreading.Scheduler.Logging;
+using Microsoft.Extensions.Logging;
 
-namespace Elders.Multithreading.Scheduler
+namespace Elders.Multithreading.Scheduler;
+
+/// <summary>
+/// This class represents a wraper of a dedicated thread which does countinous work over a <see cref="WorkSource"/>
+/// </summary>
+internal class WorkProcessor
 {
+    private readonly ILogger<WorkPool> logger;
+    private volatile bool shouldStop = false;
+
+    private IWork work;
+
+    private Thread thread;
+
     /// <summary>
-    /// This class represents a wraper of a dedicated thread which does countinous work over a <see cref="WorkSource"/>
+    /// Creates an instace of a crawler.
     /// </summary>
-    internal class WorkProcessor
+    /// <param name="name">Defines the thread name of the crawler instance</param>
+    public WorkProcessor(ILogger<WorkPool> logger)
     {
-        private static readonly ILog log = LogProvider.GetLogger(typeof(WorkProcessor));
+        this.logger = logger;
+    }
 
-        private string name;
-
-        private volatile bool shouldStop = false;
-
-        private IWork work;
-
-        private Thread thread;
-
-        /// <summary>
-        /// Creates an instace of a crawler.
-        /// </summary>
-        /// <param name="name">Defines the thread name of the crawler instance</param>
-        public WorkProcessor(string name)
+    /// <summary>
+    /// Starts dedicated crawler's thread which countinously takes and executes work.
+    /// </summary>
+    /// <param name="workSource">Crawler worksource</param>
+    public void StartCrawling(string name, WorkSource workSource)
+    {
+        if (thread is null)
         {
-            this.name = name;
-        }
-
-        /// <summary>
-        /// Starts dedicated crawler's thread which countinously takes and executes work.
-        /// </summary>
-        /// <param name="workSource">Crawler worksource</param>
-        public void StartCrawling(WorkSource workSource)
-        {
-            if (thread == null)
+            thread = new Thread(new ThreadStart(() =>
             {
-                thread = new Thread(new ThreadStart(() =>
+                using (logger.BeginScope(new Dictionary<string, string> { { "Crawler", name } }))
                 {
                     while (!shouldStop)
                     {
                         try
                         {
-                            log.Debug("Getting available work...");
+                            if (logger.IsEnabled(LogLevel.Debug))
+                                logger.LogDebug("Getting available work...");
+
                             work = workSource.GetAvailableWork();
-                            if (work != null)
+
+                            if (work is not null)
                             {
-                                log.DebugFormat("Executing work [{0}]", work);
-                                work.Start();
-                                log.DebugFormat("Work finished successfully. [{0}]", work);
-                                workSource.ReturnFinishedWork(work);
-                                log.DebugFormat("Work returned to the source. [{0}]", work);
+                                using (logger.BeginScope(new Dictionary<string, string> { { "CrawlerWork", work.Name } }))
+                                {
+                                    if (logger.IsEnabled(LogLevel.Debug))
+                                        logger.LogDebug($"Executing work...");
+
+                                    work.Start();
+
+                                    if (logger.IsEnabled(LogLevel.Debug))
+                                        logger.LogDebug($"Work finished successfully!");
+
+                                    workSource.ReturnFinishedWork(work);
+
+                                    if (logger.IsEnabled(LogLevel.Debug))
+                                        logger.LogDebug($"Work returned to the source.");
+                                }
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            log.ErrorException("Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Start()' method.", ex);
-                        }
+                        catch (Exception ex) when (logger.ErrorWithScope(ex, "Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Start()' method.")) { }
                     }
-                    log.Info("Crowler was stopped.");
-                }));
-                thread.Name = name;
-                thread.Start();
-            }
-            else
-            {
-                log.FatalFormat("Crawler '{0}' is already running on another source.", name);
-                throw new InvalidOperationException(String.Format("Crawler '{0}' is already running on another source.", name));
-            }
+                    logger.LogInformation("Crawler has been stopped.");
+                }
+            }));
+            thread.Name = name;
+            thread.Start();
         }
-
-        /// <summary>
-        /// Tells to the crawler's thread to finish it's last work and exit.
-        /// </summary>
-        public void Stop()
+        else
         {
-            try
-            {
-                log.DebugFormat("Stopping crawler '{0}'...", name);
-                thread = null;
-                shouldStop = true;
-                if (work != null)
-                    work.Stop();
-            }
-            catch (Exception ex)
-            {
-                log.FatalFormat("Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Stop()' method.", ex);
-                throw;
-            }
+            string message = $"Crawler '{name}' is already running on another source.";
+            logger.LogCritical(message);
+            throw new InvalidOperationException(message);
         }
+    }
 
+    /// <summary>
+    /// Tells to the crawler's thread to finish it's last work and exit.
+    /// </summary>
+    public void Stop()
+    {
+        try
+        {
+            logger.LogDebug("Stopping crawler..");
+            shouldStop = true;
+            if (work is not null)
+                work.Stop();
+            thread = null;
+        }
+        catch (Exception ex)
+        {
+            logger.LogCritical("Exception occured while executing a work. You should take care for all exceptions while you implement 'ICrawlerJob.Stop()' method.", ex);
+            throw;
+        }
+    }
+
+}
+
+public static class LogExtension
+{
+    public static bool ErrorWithScope<T>(this ILogger<T> logger, Exception ex, string message = null)
+    {
+        if (logger.IsEnabled(LogLevel.Error))
+            logger.LogError(ex, message ?? ex.Message);
+
+        return true;
     }
 }

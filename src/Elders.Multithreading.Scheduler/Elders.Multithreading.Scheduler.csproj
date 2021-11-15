@@ -1,33 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <!--Nuget-->
   <PropertyGroup>
     <PackageId>Multithreading.Scheduler</PackageId>
+
     <Product>Multithreading.Scheduler</Product>
     <Title>Multithreading.Scheduler</Title>
-    <Authors>Elders OSS</Authors>
-    <Copyright>Copyright © Elders OSS 2013-2021</Copyright>
     <Description>Create dedicated threads for a particular work. The WorkPool class does not use the standard .NET thread pool.</Description>
-    <PackageTags>multithreading, schedule, c#</PackageTags>
-    <PackageLicenseUrl>https://github.com/Elders/Multithreading.Scheduler/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Elders/Multithreading.Scheduler</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Elders/Multithreading.Scheduler.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <PackageTags>multithreading schedule thead</PackageTags>
+
+    <Copyright>Copyright © Elders OSS 2013-2022</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RequireLicenseAcceptance>true</RequireLicenseAcceptance>
+
     <PackageIconUrl>https://raw.githubusercontent.com/Elders/logo/master/multithreading-scheduler/black.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Elders/Multithreading.Scheduler.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Elders/Multithreading.Scheduler</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+
     <AssemblyName>Elders.Multithreading.Scheduler</AssemblyName>
-    <NeutralLanguage>en-US</NeutralLanguage>
     <RootNamespace>Elders.Multithreading.Scheduler</RootNamespace>
+    <NeutralLanguage>en-US</NeutralLanguage>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <AssemblyVersion>4.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LibLog" Version="5.0.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 </Project>
