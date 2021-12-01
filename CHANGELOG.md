@@ -1,3 +1,11 @@
+# [4.0.0-preview.2](https://github.com/Elders/Multithreading.Scheduler/compare/v4.0.0-preview.1...v4.0.0-preview.2) (2021-12-01)
+
+
+### Bug Fixes
+
+* Adds extension for CollectionServices registration ([197e8a9](https://github.com/Elders/Multithreading.Scheduler/commit/197e8a9c5fa64088fba35cc63af96d85595330c3))
+* Extracts constant for error message ([73f8523](https://github.com/Elders/Multithreading.Scheduler/commit/73f8523a65fb551aace104954ff8a3e3fcda7504))
+
 # [4.0.0-preview.1](https://github.com/Elders/Multithreading.Scheduler/compare/v4.0.0-next.11...v4.0.0-preview.1) (2021-11-15)
 
 # [4.0.0-next.11](https://github.com/Elders/Multithreading.Scheduler/compare/v4.0.0-next.10...v4.0.0-next.11) (2021-01-25)
