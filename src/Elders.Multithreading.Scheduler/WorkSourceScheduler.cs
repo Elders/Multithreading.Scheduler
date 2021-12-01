@@ -9,8 +9,10 @@ namespace Elders.Multithreading.Scheduler;
 
 internal class WorkSourceScheduler
 {
+    const string ThreadMessError = "Probably there is a thread mess. We are trying to remove an item from 'workForSchedule' collection but it is missing. This should never happen because this collection must be served by only one thread.";
+
     private const int OneSecond = 1000;
-    private readonly ILogger<WorkPool> logger;
+    private readonly ILogger logger;
     private volatile bool shouldWork = true;
 
     private int sleepTime;
@@ -25,7 +27,7 @@ internal class WorkSourceScheduler
 
     private Action<IWork> workReadyForProcess;
 
-    public WorkSourceScheduler(ILogger<WorkPool> logger)
+    public WorkSourceScheduler(ILogger logger)
     {
         workForSchedule = new List<IWork>();
         unmanagedPendingWork = new ConcurrentQueue<IWork>();
@@ -99,9 +101,8 @@ internal class WorkSourceScheduler
                     }
                     else
                     {
-                        string error = "Probably there is a thread mess. We are trying to remove an item from 'workForSchedule' collection but it is missing. This should never happen because this collection must be served by only one thread.";
-                        logger.LogError(error);
-                        throw new InvalidOperationException(error);
+                        logger.LogError(ThreadMessError);
+                        throw new InvalidOperationException(ThreadMessError);
                     }
                 }
                 else
