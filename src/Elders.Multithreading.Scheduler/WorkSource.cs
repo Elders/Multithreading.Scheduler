@@ -14,7 +14,7 @@ internal class WorkSource
 
     private WorkSourceScheduler workSourceScheduler;
 
-    public WorkSource(ILogger<WorkPool> logger)
+    public WorkSource(ILogger logger)
     {
         availableWork = new ConcurrentQueue<IWork>();
         freeCrawlers = new ConcurrentQueue<ManualResetEvent>();

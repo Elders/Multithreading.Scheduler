@@ -106,7 +106,7 @@ internal class WorkProcessor
 
 public static class LogExtension
 {
-    public static bool ErrorWithScope<T>(this ILogger<T> logger, Exception ex, string message = null)
+    public static bool ErrorWithScope(this ILogger logger, Exception ex, string message = null)
     {
         if (logger.IsEnabled(LogLevel.Error))
             logger.LogError(ex, message ?? ex.Message);
