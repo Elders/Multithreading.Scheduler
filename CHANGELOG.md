@@ -1,3 +1,10 @@
+# [4.0.0-preview.3](https://github.com/Elders/Multithreading.Scheduler/compare/v4.0.0-preview.2...v4.0.0-preview.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* Make structured logging work ([1082649](https://github.com/Elders/Multithreading.Scheduler/commit/10826493c3b4e6c621b7aabcfadb374bc28b59f2))
+
 # [4.0.0-preview.2](https://github.com/Elders/Multithreading.Scheduler/compare/v4.0.0-preview.1...v4.0.0-preview.2) (2021-12-01)
 
 
