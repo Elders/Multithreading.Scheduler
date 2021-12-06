@@ -36,7 +36,7 @@ internal class WorkProcessor
         {
             thread = new Thread(new ThreadStart(() =>
             {
-                using (logger.BeginScope(new Dictionary<string, string> { { "Crawler", name } }))
+                using (logger.BeginScope(new Dictionary<string, object> { { "Crawler", name } })) // I know that name is a string, but please save urself 5 hours and do not change the value of the dictionary to string. ElasticSearch logging would not work due to mappings not being able to resolve the type!
                 {
                     while (!shouldStop)
                     {
@@ -49,7 +49,7 @@ internal class WorkProcessor
 
                             if (work is not null)
                             {
-                                using (logger.BeginScope(new Dictionary<string, string> { { "CrawlerWork", work.Name } }))
+                                using (logger.BeginScope(new Dictionary<string, object> { { "CrawlerWork", work.Name } }))  // I know that name is a string, but please save urself 5 hours and do not change the value of the dictionary to string. ElasticSearch logging would not work due to mappings not being able to resolve the type!
                                 {
                                     if (logger.IsEnabled(LogLevel.Debug))
                                         logger.LogDebug($"Executing work...");
